@@ -1,2 +1,2 @@
-Want to verify the updation in an existing file
-
+#!/bin/bash
+echo "HelloWorld"
