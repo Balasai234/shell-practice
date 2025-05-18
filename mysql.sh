@@ -13,12 +13,12 @@ if [ $? -ne 0 ]
 then
 echo "MySQL is not installed...going to install"
 dnf install mysql -y
-if [ $? -ne 0]
+if [ $? -eq 0]
 then 
+echo "package is  install"
+else
 echo "package is not install"
 exit 1
-else
-echo "package is install"
 fi
 else
 echo "MySQL is already installed...Nothing to do"
