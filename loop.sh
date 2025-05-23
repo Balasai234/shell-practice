@@ -7,7 +7,8 @@ N="\e[0
 UserId= $(id -u)
 if [ $UserId ne 0 ]
 then 
-echo -e "$R you don't have a root access"
+echo -e "$R you don't have a root access$N"
+exit 1
 else
-echo -e "$G you are running with root access, continue.."
+echo "you are running with root access, continue.."
 fi
