@@ -13,11 +13,21 @@ exit 1
 else
 echo -e "$G Please install the packages as you have root access $N"
 fi
+Validate(){
+    if [ $1 -ne 0 ]
+    then
+    echo -e "$2 package is not installed $N"
+    exit 1
+    else
+    echo -e "$1 package is installed"
+    fi
+}
 dnf list installed mysql
 if [ $? -ne 0 ]
 then 
 echo -e "$R package not found please install my sql if you required $N"
 dnf install mysql -y
+Validate $? "mySql"
 else
 echo -e "Nothing to install it you have installed $Gmysql package already$G"
 fi
