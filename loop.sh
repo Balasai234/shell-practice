@@ -14,7 +14,7 @@ else
 echo -e "$G Please install the packages as you have root access $N"
 fi
 dnf list installed mysql
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then 
 echo -e "$R package not found please install my sql if you required $N"
 dnf install mysql -y
