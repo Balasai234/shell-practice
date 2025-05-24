@@ -41,9 +41,11 @@ Validate $? "python3"
 else
 echo -e "Nothing to do Python3.... $Y already installed $N"
 fi
+
 dnf list installed nginx
-if [$? -ne 0 ]
-echo "Nginx is not installed .... $G going to install it $N"
+if [ $? -ne 0 ]
+then 
+echo "Nginx is not installed ....  going to install it "
 dnf install nginx -y
 Validate $? "nginx"
 else
