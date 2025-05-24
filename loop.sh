@@ -18,3 +18,6 @@ if [$? -ne 0 ]
 then 
 echo -e "$R package not found please install my sql if you required $N"
 dnf install mysql -y
+else
+echo -e "Nothing to install it you have installed $Gmysql package already$G"
+fi
