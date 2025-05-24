@@ -1,14 +1,14 @@
 #!/bin/bash
 
-R="\e[30m"
-G="\e[31m"
-Y="\e[32m"
-N="\e[0m
-UserId= $(id -u)
-if [ $UserId -ne 0 ]
-then 
-echo -e "$R ERROR: you don't have a root access $N"
-exit 1
+USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+if [ $USERID -ne 0]
+then
+echo -e "$R Please run with Root access $N"
 else
-echo "you are running with root access, continue.."
+echo -e "$G Please install the packages as you have root access $N"
 fi
